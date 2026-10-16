@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>邮件发送平台</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a73e8'/%3E%3Cpath d='M8 22V10h3.4l4.6 7 4.6-7H24v12h-3v-7l-3.6 5.4h-1.8L12 15v7z' fill='white'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">邮</div>
+      <div class="brand-text">
+        <strong>邮件发送平台</strong>
+        <span>Mail Sending Platform</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-foot">
+      <div class="env-pill" id="env-pill">本地环境</div>
+      <div class="foot-note">新增功能会自动出现在上方列表</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="page-title">加载中…</h1>
+        <p id="page-desc"></p>
+      </div>
+      <div class="topbar-actions" id="topbar-actions"></div>
+    </header>
+    <section class="view" id="view"></section>
+  </main>
+</div>
+
+<!-- 通用：二次确认弹窗（默认聚焦「取消」） -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <h3 id="modal-title">确认操作</h3>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn" id="modal-cancel" type="button">取消</button>
+      <button class="btn btn-primary" id="modal-ok" type="button">确认</button>
+    </div>
+  </div>
+</div>
+
+<!-- 邮件预览弹窗 -->
+<div class="modal-backdrop" id="preview-modal" hidden>
+  <div class="modal modal-wide" role="dialog" aria-modal="true">
+    <h3>邮件正文预览</h3>
+    <div class="modal-body preview-body">
+      <iframe id="preview-frame" title="邮件正文预览" sandbox=""></iframe>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="preview-close" type="button">关闭</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+<script src="/js/features/petty-cash.js"></script>
+</body>
+</html>
